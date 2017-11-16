@@ -62,20 +62,6 @@
 	"flow": {
 		"actions": [
 			{
-				"id": "program_stop",
-				"title": {
-					"en": "Stop the active program",
-					"nl": "Stop het actieve programma"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven"
-					}
-				]
-			},
-			{
 				"id": "program_oven_preheat",
 				"title": {
 					"en": "Pre-heat the oven",
@@ -96,6 +82,20 @@
 						"step": 1,
 						"labelDecimals": 0,
 						"label": "°C"
+					}
+				]
+			},
+			{
+				"id": "program_stop",
+				"title": {
+					"en": "Stop the active program",
+					"nl": "Stop het actieve programma"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven"
 					}
 				]
 			}
