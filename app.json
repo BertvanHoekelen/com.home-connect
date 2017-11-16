@@ -7,6 +7,10 @@
 	"description": {
 		"en": "Adds support for Bosch-Siemens Home Connect"
 	},
+	"images": {
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
+	},
 	"category": "appliances",
 	"version": "1.0.0",
 	"compatibility": ">=1.5.0",
@@ -21,7 +25,15 @@
 				"en": "Oven"
 			},
 			"class": "oven",
-			"capabilities": [ "onoff", "measure_temperature", "alarm_contact" ],
+			"capabilities": [ "measure_temperature", "alarm_contact" ],
+			"capabilitiesOptions": {
+				"alarm_contact": {
+					"title": {
+						"en": "Door open",
+						"nl": "Deur geopend"
+					}
+				}
+			},
 			"mobile": {
 				"components": [
 					{
@@ -30,10 +42,6 @@
 					{
 						"id": "sensor",
 						"capabilities": [ "measure_temperature", "alarm_contact" ]
-					},
-					{
-						"id": "toggle",
-						"capabilities": [ "onoff" ]
 					}
 				]
 			},

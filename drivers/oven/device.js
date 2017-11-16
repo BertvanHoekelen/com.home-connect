@@ -6,8 +6,6 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 
 	onInit() {
 		super.onInit();
-
-		this.registerCapabilityListener('onoff', this._onCapabilityOnoff.bind(this));
 	}
 
 	async _parseStatus( key, value ) {
@@ -22,13 +20,6 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 
 	async _parseSetting( key, value ) {
 		//this.log('_parseSetting', key, value)
-
-		if( key === 'BSH.Common.Setting.PowerState' )
-			return this.setCapabilityValue('onoff', value === 'BSH.Common.EnumType.PowerState.On' );
-	}
-
-	_onCapabilityOnoff( value ) {
-		return this._setSetting('BSH.Common.Setting.PowerState', value ? 'BSH.Common.EnumType.PowerState.On' : 'BSH.Common.EnumType.PowerState.Off' )
 	}
 	
 	setProgramPreheat({ temperature, duration }) {
