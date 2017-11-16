@@ -1,41 +1,25 @@
 'use strict';
 
+const Homey = require('homey');
 const HomeConnectDriver = require('../../lib/HomeConnectDriver');
-const HomeConnectApi = require('../../lib/HomeConnectApi');
 
 class HomeConnectDriverOven extends HomeConnectDriver {
-
-	async _onPairListDevices( token ) {
-
-		let homeConnectApi = new HomeConnectApi();
-			homeConnectApi.setToken(token);
-
-		return homeConnectApi.getHomeAppliances()
-			.then( result => {
-
-				if( !Array.isArray(result.homeappliances) )
-					throw new Error('Invalid response');
-
-				let devices = [];
-				result.homeappliances.forEach( homeAppliance => {
-					devices.push({
-						data: {
-							haId: homeAppliance.haId
-						},
-						name: homeAppliance.name,
-						store: {
-							token: token
-						}
-					});
-				});
-
-				return devices;
-
+	
+	onInit() {
+		super.onInit();
+		
+		new Homey.FlowCardAction('program_oven_preheat')
+			.register()
+			.registerRunListener( args => {
+				return args.device.setProgramPreheat({
+					temperature: args.temperature,
+					duration: ( args.duration ) ? args.duration / 1000 : 1200
+				})
 			})
-			.catch( err => {
-				this.error(err);
-				throw err;
-			})
+	}
+	
+	_onPairFilter( homeAppliance ) {
+		return homeAppliance.type === 'Oven';
 	}
 
 }

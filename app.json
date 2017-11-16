@@ -21,7 +21,7 @@
 				"en": "Oven"
 			},
 			"class": "oven",
-			"capabilities": [ "onoff", "measure_temperature", "target_temperature" ],
+			"capabilities": [ "onoff", "measure_temperature", "alarm_contact" ],
 			"mobile": {
 				"components": [
 					{
@@ -29,7 +29,7 @@
 					},
 					{
 						"id": "sensor",
-						"capabilities": [ "measure_temperature" ]
+						"capabilities": [ "measure_temperature", "alarm_contact" ]
 					},
 					{
 						"id": "toggle",
@@ -58,5 +58,47 @@
 				}
 			]
 		}
-	]
+	],
+	"flow": {
+		"actions": [
+			{
+				"id": "program_stop",
+				"title": {
+					"en": "Stop the active program",
+					"nl": "Stop het actieve programma"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven"
+					}
+				]
+			},
+			{
+				"id": "program_oven_preheat",
+				"title": {
+					"en": "Pre-heat the oven",
+					"nl": "Verwarm de oven voor"
+				},
+				"duration": true,
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven"
+					},
+					{
+						"name": "temperature",
+						"type": "range",
+						"min": 30,
+						"max": 250,
+						"step": 1,
+						"labelDecimals": 0,
+						"label": "°C"
+					}
+				]
+			}
+		]
+	}
 }
