@@ -1,0 +1,62 @@
+{
+	"id": "com.home-connect",
+	"sdk": 2,
+	"name": {
+		"en": "Bosch-Siemens Home Connect"
+	},
+	"description": {
+		"en": "Adds support for Bosch-Siemens Home Connect"
+	},
+	"category": "appliances",
+	"version": "1.0.0",
+	"compatibility": ">=1.5.0",
+	"author": {
+		"name": "Athom B.V.",
+		"email": "info@athom.com"
+	},
+	"drivers": [
+		{
+			"id": "oven",
+			"name": {
+				"en": "Oven"
+			},
+			"class": "oven",
+			"capabilities": [ "onoff", "measure_temperature", "target_temperature" ],
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
+					},
+					{
+						"id": "sensor",
+						"capabilities": [ "measure_temperature" ]
+					},
+					{
+						"id": "toggle",
+						"capabilities": [ "onoff" ]
+					}
+				]
+			},
+			"pair": [
+				{
+					"id": "login_oauth2",
+					"template": "login_oauth2"
+				},
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					},
+					"options": {
+						"singular": true
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
+		}
+	]
+}

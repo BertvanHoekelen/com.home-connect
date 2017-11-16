@@ -1,0 +1,18 @@
+{
+  "name": "com.home-connect",
+  "version": "1.0.0",
+  "description": "Adds support for Bosch-Siemens Home Connect",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eventsource": "^1.0.5",
+    "request-promise-native": "^1.0.5"
+  }
+}
