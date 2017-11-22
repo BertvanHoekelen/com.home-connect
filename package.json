@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "eventsource": "^1.0.5",
+    "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   }
 }
