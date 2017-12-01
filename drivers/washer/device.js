@@ -2,7 +2,7 @@
 
 const HomeConnectDevice = require('../../lib/HomeConnectDevice');
 
-class HomeConnectDeviceOven extends HomeConnectDevice {
+class HomeConnectDeviceDishwasher extends HomeConnectDevice {
 
 	onInit() {
 		super.onInit();
@@ -10,9 +10,6 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 
 	async _parseStatus( key, value ) {
 		//this.log('_parseStatus', key, value)
-
-		if( key === 'Cooking.Oven.Status.CurrentCavityTemperature' )
-			return this.setCapabilityValue('measure_temperature', value);
 
 		if( key === 'BSH.Common.Status.DoorState' )
 			return this.setCapabilityValue('alarm_contact', value === 'BSH.Common.EnumType.DoorState.Open' );
@@ -22,21 +19,19 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 		//this.log('_parseSetting', key, value)
 	}
 	
-	startProgram( programId, { temperature, duration }) {
+	startProgram( programId, { temperature, spin }) {
 		return this._setProgram(programId, [
 			{
-				'key': 'Cooking.Oven.Option.SetpointTemperature',
+				'key': 'LaundryCare.Washer.Option.Temperature',
 				'value': temperature,
-				'unit': '°C'
 			},
 			{
-				'key': 'BSH.Common.Option.Duration',
-				'value': duration,
-				'unit': 'seconds'
+				'key': 'LaundryCare.Washer.Option.SpinSpeed',
+				'value': spin,
 			}
-		])	
+		])		
 	}
 
 }
 
-module.exports = HomeConnectDeviceOven;
+module.exports = HomeConnectDeviceDishwasher;

@@ -22,7 +22,8 @@
 		{
 			"id": "oven",
 			"name": {
-				"en": "Oven"
+				"en": "Oven",
+				"nl": "Oven"
 			},
 			"images": {
 				"large": "/drivers/oven/assets/images/large.png",
@@ -69,15 +70,73 @@
 					"template": "add_devices"
 				}
 			]
+		},
+		{
+			"id": "washer",
+			"name": {
+				"en": "Washer",
+				"nl": "Wasmachine"
+			},
+			"images": {
+				"large": "/drivers/washer/assets/images/large.png",
+				"small": "/drivers/washer/assets/images/small.png"
+			},
+			"class": "oven",
+			"capabilities": [ "alarm_contact", "bshc_string.remaining_time" ],
+			"capabilitiesOptions": {
+				"alarm_contact": {
+					"title": {
+						"en": "Door open",
+						"nl": "Deur geopend"
+					}
+				},
+				"bshc_string.remaining_time": {
+					"title": {
+						"en": "Remaining time",
+						"nl": "Resterende tijd"
+					}
+				}
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
+					},
+					{
+						"id": "sensor",
+						"capabilities": [ "bshc_string", "alarm_contact" ]
+					}
+				]
+			},
+			"pair": [
+				{
+					"id": "login_oauth2",
+					"template": "login_oauth2"
+				},
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					},
+					"options": {
+						"singular": true
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
 		}
 	],
 	"flow": {
 		"actions": [
 			{
-				"id": "program_oven_preheat",
+				"id": "program_oven",
 				"title": {
-					"en": "Pre-heat the oven",
-					"nl": "Verwarm de oven voor"
+					"en": "Start Program",
+					"nl": "Start een programma"
 				},
 				"duration": true,
 				"args": [
@@ -85,6 +144,40 @@
 						"name": "device",
 						"type": "device",
 						"filter": "driver_id=oven"
+					},
+					{
+						"name": "program",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "preheat",
+								"label": {
+									"en": "Pre-heat",
+									"nl": "Voorverwarmen"
+								}
+							},
+							{
+								"id": "pizza",
+								"label": {
+									"en": "Pizza",
+									"nl": "Pizza"
+								}
+							},
+							{
+								"id": "hotair",
+								"label": {
+									"en": "Hot Air",
+									"nl": "Hetelucht"
+								}
+							},
+							{
+								"id": "topbottom",
+								"label": {
+									"en": "Top/Bottom",
+									"nl": "Boven/Onderkant"
+								}
+							}
+						]
 					},
 					{
 						"name": "temperature",
@@ -97,78 +190,151 @@
 					}
 				]
 			},
+			
+			
 			{
-				"id": "program_oven_pizza",
+				"id": "program_washer",
 				"title": {
-					"en": "Pizza mode",
-					"nl": "Pizza modus"
+					"en": "Start Program",
+					"nl": "Start een programma"
 				},
-				"duration": true,
 				"args": [
 					{
 						"name": "device",
 						"type": "device",
-						"filter": "driver_id=oven"
+						"filter": "driver_id=washer"
+					},
+					{
+						"name": "program",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "cotton",
+								"label": {
+									"en": "Cotton",
+									"nl": "Katoen"
+								}
+							},
+							{
+								"id": "easycare",
+								"label": {
+									"en": "Easy Care",
+									"nl": "Easy Care"
+								}
+							},
+							{
+								"id": "mix",
+								"label": {
+									"en": "Mix",
+									"nl": "Mix"
+								}
+							},
+							{
+								"id": "silk",
+								"label": {
+									"en": "Silk",
+									"nl": "Zijde"
+								}
+							},
+							{
+								"id": "wool",
+								"label": {
+									"en": "Wool",
+									"nl": "Wol"
+								}
+							}
+						]
 					},
 					{
 						"name": "temperature",
-						"type": "range",
-						"min": 30,
-						"max": 250,
-						"step": 1,
-						"labelDecimals": 0,
-						"label": "°C"
-					}
-				]
-			},
-			{
-				"id": "program_oven_hotair",
-				"title": {
-					"en": "Circulation air mode",
-					"nl": "Hetelucht modus"
-				},
-				"duration": true,
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven"
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "cold",
+								"label": {
+									"en": "Cold",
+									"nl": "Koud"
+								}
+							},
+							{
+								"id": "20c",
+								"label": "20 °C"
+							},
+							{
+								"id": "30c",
+								"label": "30 °C"
+							},
+							{
+								"id": "40c",
+								"label": "40 °C"
+							},
+							{
+								"id": "50c",
+								"label": "50 °C"
+							},
+							{
+								"id": "60c",
+								"label": "60 °C"
+							},
+							{
+								"id": "70c",
+								"label": "70 °C"
+							},
+							{
+								"id": "80c",
+								"label": "80 °C"
+							},
+							{
+								"id": "90c",
+								"label": "90 °C"
+							}
+						]
 					},
 					{
-						"name": "temperature",
-						"type": "range",
-						"min": 30,
-						"max": 250,
-						"step": 1,
-						"labelDecimals": 0,
-						"label": "°C"
+						"name": "spin",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "off",
+								"label": {
+									"en": "No spinning",
+									"nl": "Niet rondraaien"
+								}
+							},
+							{
+								"id": "400rpm",
+								"label": "400 rpm"
+							},
+							{
+								"id": "600rpm",
+								"label": "600 rpm"
+							},
+							{
+								"id": "800rpm",
+								"label": "800 rpm"
+							},
+							{
+								"id": "1000rpm",
+								"label": "1000 rpm"
+							},
+							{
+								"id": "1200rpm",
+								"label": "1200 rpm"
+							},
+							{
+								"id": "1400rpm",
+								"label": "1400 rpm"
+							},
+							{
+								"id": "1600rpm",
+								"label": "1600 rpm"
+							}
+						]
 					}
 				]
 			},
-			{
-				"id": "program_oven_topbottom",
-				"title": {
-					"en": "Top/Bottom mode",
-					"nl": "Top/Bottom modus"
-				},
-				"duration": true,
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven"
-					},
-					{
-						"name": "temperature",
-						"type": "range",
-						"min": 30,
-						"max": 250,
-						"step": 1,
-						"labelDecimals": 0,
-						"label": "°C"
-					}
-				]
-			},
+			
+			
 			{
 				"id": "program_stop",
 				"title": {
@@ -179,10 +345,20 @@
 					{
 						"name": "device",
 						"type": "device",
-						"filter": "driver_id=oven"
+						"filter": "driver_id=oven|washer"
 					}
 				]
 			}
 		]
+	},
+	"capabilities": {
+		"bshc_string": {
+			"type": "string",
+			"getable": true,
+			"setable": true,
+			"title": {
+				"en": "Generic String"
+			}
+		}
 	}
 }
