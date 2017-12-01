@@ -34,7 +34,7 @@ const spinMap = {
 	'1600rpm': 'LaundryCare.Washer.EnumType.SpinSpeed.RPM1600',
 }
 
-class HomeConnectDriverOven extends HomeConnectDriver {
+class HomeConnectDriverWasher extends HomeConnectDriver {
 	
 	onInit() {
 		super.onInit();
@@ -55,4 +55,4 @@ class HomeConnectDriverOven extends HomeConnectDriver {
 
 }
 
-module.exports = HomeConnectDriverOven;
+module.exports = HomeConnectDriverWasher;

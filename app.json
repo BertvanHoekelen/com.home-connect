@@ -128,6 +128,64 @@
 					"template": "add_devices"
 				}
 			]
+		},
+		{
+			"id": "dryer",
+			"name": {
+				"en": "Dryer",
+				"nl": "Droger"
+			},
+			"images": {
+				"large": "/drivers/dryer/assets/images/large.png",
+				"small": "/drivers/dryer/assets/images/small.png"
+			},
+			"class": "oven",
+			"capabilities": [ "alarm_contact", "bshc_string.remaining_time" ],
+			"capabilitiesOptions": {
+				"alarm_contact": {
+					"title": {
+						"en": "Door open",
+						"nl": "Deur geopend"
+					}
+				},
+				"bshc_string.remaining_time": {
+					"title": {
+						"en": "Remaining time",
+						"nl": "Resterende tijd"
+					}
+				}
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
+					},
+					{
+						"id": "sensor",
+						"capabilities": [ "bshc_string", "alarm_contact" ]
+					}
+				]
+			},
+			"pair": [
+				{
+					"id": "login_oauth2",
+					"template": "login_oauth2"
+				},
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					},
+					"options": {
+						"singular": true
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
 		}
 	],
 	"flow": {
@@ -336,6 +394,76 @@
 			
 			
 			{
+				"id": "program_dryer",
+				"title": {
+					"en": "Start Program",
+					"nl": "Start een programma"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=dryer"
+					},
+					{
+						"name": "program",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "cotton",
+								"label": {
+									"en": "Cotton",
+									"nl": "Katoen"
+								}
+							},
+							{
+								"id": "synthetic",
+								"label": {
+									"en": "Synthetic",
+									"nl": "Synthetisch"
+								}
+							},
+							{
+								"id": "mix",
+								"label": {
+									"en": "Mix",
+									"nl": "Mix"
+								}
+							}
+						]
+					},
+					{
+						"name": "target",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "irondry",
+								"label": {
+									"en": "Iron dry",
+									"nl": "Strijkdroog"
+								}
+							},
+							{
+								"id": "cupboarddry",
+								"label": {
+									"en": "Cupboard dry",
+									"nl": "Kastdroog dry"
+								}
+							},
+							{
+								"id": "cupboarddryplus",
+								"label": {
+									"en": "Cupboard dry plus",
+									"nl": "Kastdroog plus"
+								}
+							}
+						]
+					}
+				]
+			},
+			
+			
+			{
 				"id": "program_stop",
 				"title": {
 					"en": "Stop the active program",
@@ -345,7 +473,7 @@
 					{
 						"name": "device",
 						"type": "device",
-						"filter": "driver_id=oven|washer"
+						"filter": "driver_id=oven|washer|dryer"
 					}
 				]
 			}
