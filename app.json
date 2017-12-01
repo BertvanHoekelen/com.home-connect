@@ -81,7 +81,7 @@
 				"large": "/drivers/washer/assets/images/large.png",
 				"small": "/drivers/washer/assets/images/small.png"
 			},
-			"class": "oven",
+			"class": "washer",
 			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -139,7 +139,7 @@
 				"large": "/drivers/dryer/assets/images/large.png",
 				"small": "/drivers/dryer/assets/images/small.png"
 			},
-			"class": "oven",
+			"class": "dryer",
 			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -197,7 +197,7 @@
 				"large": "/drivers/dishwasher/assets/images/large.png",
 				"small": "/drivers/dishwasher/assets/images/small.png"
 			},
-			"class": "oven",
+			"class": "dishwasher",
 			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -206,6 +206,58 @@
 						"nl": "Deur geopend"
 					}
 				},
+				"bshc_string.remaining_time": {
+					"title": {
+						"en": "Remaining time",
+						"nl": "Resterende tijd"
+					}
+				}
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
+					},
+					{
+						"id": "sensor",
+						"capabilities": [ "alarm_contact" ]
+					}
+				]
+			},
+			"pair": [
+				{
+					"id": "login_oauth2",
+					"template": "login_oauth2"
+				},
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					},
+					"options": {
+						"singular": true
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
+		},
+		{
+			"id": "coffee",
+			"name": {
+				"en": "Coffee Machine",
+				"nl": "Koffiezetapparaat"
+			},
+			"images": {
+				"large": "/drivers/coffee/assets/images/large.png",
+				"small": "/drivers/coffee/assets/images/small.png"
+			},
+			"class": "coffee",
+			"capabilities": [ "alarm_contact", "bshc_string.progress" ],
+			"capabilitiesOptions": {
 				"bshc_string.remaining_time": {
 					"title": {
 						"en": "Remaining time",
@@ -574,6 +626,122 @@
 			
 			
 			{
+				"id": "program_coffee",
+				"title": {
+					"en": "Start Program",
+					"nl": "Start een programma"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=coffee"
+					},
+					{
+						"name": "program",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "espresso",
+								"label": {
+									"en": "Espresso"
+								}
+							},
+							{
+								"id": "espressomacchiato",
+								"label": {
+									"en": "Espresso Macchiato"
+								}
+							},
+							{
+								"id": "coffee",
+								"label": {
+									"en": "Coffee",
+									"nl": "Koffie"
+								}
+							},
+							{
+								"id": "cappuccino",
+								"label": {
+									"en": "Cappuccino"
+								}
+							},
+							{
+								"id": "lattemacchiato",
+								"label": {
+									"en": "Latte Macchiato"
+								}
+							},
+							{
+								"id": "cafelatte",
+								"label": {
+									"en": "Caffe Latte"
+								}
+							}
+						]
+					},
+					{
+						"name": "bean_amount",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "mild",
+								"label": {
+									"en": "Mild",
+									"nl": "Mild"
+								}
+							},
+							{
+								"id": "normal",
+								"label": {
+									"en": "Normal",
+									"nl": "Normaal"
+								}
+							},
+							{
+								"id": "strong",
+								"label": {
+									"en": "Strong",
+									"nl": "Sterk"
+								}
+							},
+							{
+								"id": "verystrong",
+								"label": {
+									"en": "Very strong",
+									"nl": "Heel sterk"
+								}
+							},
+							{
+								"id": "doubleshot",
+								"label": {
+									"en": "Double shot",
+									"nl": "Dubbel shot"
+								}
+							},
+							{
+								"id": "doubleshotplus",
+								"label": {
+									"en": "Double shot plus",
+									"nl": "Dubbel shot plus"
+								}
+							}
+						]
+					},
+					{
+						"name": "fill_quantity",
+						"type": "range",
+						"min": 35,
+						"max": 480,
+						"step": 5,
+						"labelDecimals": 0,
+						"label": "ml"
+					}
+				]
+			},
+			
+			
+			{
 				"id": "program_stop",
 				"title": {
 					"en": "Stop the active program",
@@ -583,7 +751,7 @@
 					{
 						"name": "device",
 						"type": "device",
-						"filter": "driver_id=oven|washer|dryer|dishwasher"
+						"filter": "driver_id=oven|washer|dryer|dishwasher|coffee"
 					}
 				]
 			}
