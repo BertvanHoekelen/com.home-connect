@@ -7,6 +7,7 @@ Pre-heat your oven when you leave work, send a picture of your fridge to your sm
 ##### Currently supported:
 
 * Oven
+* Washer
 
 ##### Planned to support:
 
@@ -14,4 +15,3 @@ Pre-heat your oven when you leave work, send a picture of your fridge to your sm
 * Dishwasher
 * Dryer
 * Fridge Freezer
-* Washer
