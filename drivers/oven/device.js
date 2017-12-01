@@ -23,7 +23,35 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 	}
 	
 	setProgramPreheat({ temperature, duration }) {
-		return this._setProgram('Cooking.Oven.Program.HeatingMode.PreHeating', [
+		return this._setOvenProgram('Cooking.Oven.Program.HeatingMode.PreHeating', {
+			temperature,
+			duration
+		})
+	}
+	
+	setProgramPizza({ temperature, duration }) {
+		return this._setOvenProgram('Cooking.Oven.Program.HeatingMode.PizzaSetting', {
+			temperature,
+			duration
+		})
+	}
+	
+	setProgramHotAir({ temperature, duration }) {
+		return this._setOvenProgram('Cooking.Oven.Program.HeatingMode.HotAir', {
+			temperature,
+			duration
+		})
+	}
+	
+	setProgramTopBottom({ temperature, duration }) {
+		return this._setOvenProgram('Cooking.Oven.Program.HeatingMode.TopBottomHeating', {
+			temperature,
+			duration
+		})
+	}
+	
+	_setOvenProgram( programId, { temperature, duration }) {
+		return this._setProgram(programId, [
 			{
 				'key': 'Cooking.Oven.Option.SetpointTemperature',
 				'value': temperature,

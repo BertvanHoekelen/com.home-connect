@@ -98,6 +98,78 @@
 				]
 			},
 			{
+				"id": "program_oven_pizza",
+				"title": {
+					"en": "Pizza mode",
+					"nl": "Pizza modus"
+				},
+				"duration": true,
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven"
+					},
+					{
+						"name": "temperature",
+						"type": "range",
+						"min": 30,
+						"max": 250,
+						"step": 1,
+						"labelDecimals": 0,
+						"label": "°C"
+					}
+				]
+			},
+			{
+				"id": "program_oven_hotair",
+				"title": {
+					"en": "Circulation air mode",
+					"nl": "Hetelucht modus"
+				},
+				"duration": true,
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven"
+					},
+					{
+						"name": "temperature",
+						"type": "range",
+						"min": 30,
+						"max": 250,
+						"step": 1,
+						"labelDecimals": 0,
+						"label": "°C"
+					}
+				]
+			},
+			{
+				"id": "program_oven_topbottom",
+				"title": {
+					"en": "Top/Bottom mode",
+					"nl": "Top/Bottom modus"
+				},
+				"duration": true,
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven"
+					},
+					{
+						"name": "temperature",
+						"type": "range",
+						"min": 30,
+						"max": 250,
+						"step": 1,
+						"labelDecimals": 0,
+						"label": "°C"
+					}
+				]
+			},
+			{
 				"id": "program_stop",
 				"title": {
 					"en": "Stop the active program",
