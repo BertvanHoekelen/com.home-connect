@@ -12,7 +12,7 @@
 		"small": "/assets/images/small.png"
 	},
 	"category": "appliances",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"compatibility": ">=1.5.0",
 	"author": {
 		"name": "Athom B.V.",
@@ -30,7 +30,7 @@
 				"small": "/drivers/oven/assets/images/small.png"
 			},
 			"class": "oven",
-			"capabilities": [ "measure_temperature", "alarm_contact" ],
+			"capabilities": [ "measure_temperature", "alarm_contact", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
 					"title": {
@@ -82,7 +82,7 @@
 				"small": "/drivers/washer/assets/images/small.png"
 			},
 			"class": "oven",
-			"capabilities": [ "alarm_contact", "bshc_string.remaining_time" ],
+			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
 					"title": {
@@ -104,7 +104,7 @@
 					},
 					{
 						"id": "sensor",
-						"capabilities": [ "bshc_string", "alarm_contact" ]
+						"capabilities": [ "alarm_contact" ]
 					}
 				]
 			},
@@ -140,7 +140,7 @@
 				"small": "/drivers/dryer/assets/images/small.png"
 			},
 			"class": "oven",
-			"capabilities": [ "alarm_contact", "bshc_string.remaining_time" ],
+			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
 					"title": {
@@ -162,7 +162,65 @@
 					},
 					{
 						"id": "sensor",
-						"capabilities": [ "bshc_string", "alarm_contact" ]
+						"capabilities": [ "alarm_contact" ]
+					}
+				]
+			},
+			"pair": [
+				{
+					"id": "login_oauth2",
+					"template": "login_oauth2"
+				},
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					},
+					"options": {
+						"singular": true
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
+		},
+		{
+			"id": "dishwasher",
+			"name": {
+				"en": "Dishwasher",
+				"nl": "Vaatwasser"
+			},
+			"images": {
+				"large": "/drivers/dishwasher/assets/images/large.png",
+				"small": "/drivers/dishwasher/assets/images/small.png"
+			},
+			"class": "oven",
+			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
+			"capabilitiesOptions": {
+				"alarm_contact": {
+					"title": {
+						"en": "Door open",
+						"nl": "Deur geopend"
+					}
+				},
+				"bshc_string.remaining_time": {
+					"title": {
+						"en": "Remaining time",
+						"nl": "Resterende tijd"
+					}
+				}
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
+					},
+					{
+						"id": "sensor",
+						"capabilities": [ "alarm_contact" ]
 					}
 				]
 			},
@@ -464,6 +522,58 @@
 			
 			
 			{
+				"id": "program_dishwasher",
+				"title": {
+					"en": "Start Program",
+					"nl": "Start een programma"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=dishwasher"
+					},
+					{
+						"name": "program",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "auto1",
+								"label": {
+									"en": "Auto 35-45 °C"
+								}
+							},
+							{
+								"id": "auto2",
+								"label": {
+									"en": "Auto 45-65 °C"
+								}
+							},
+							{
+								"id": "auto3",
+								"label": {
+									"en": "Auto 65-75 °C"
+								}
+							},
+							{
+								"id": "eco50",
+								"label": {
+									"en": "Eco 50 °C"
+								}
+							},
+							{
+								"id": "quick45",
+								"label": {
+									"en": "Quick Wash 45 °C"
+								}
+							}
+						]
+					}
+				]
+			},
+			
+			
+			{
 				"id": "program_stop",
 				"title": {
 					"en": "Stop the active program",
@@ -473,7 +583,7 @@
 					{
 						"name": "device",
 						"type": "device",
-						"filter": "driver_id=oven|washer|dryer"
+						"filter": "driver_id=oven|washer|dryer|dishwasher"
 					}
 				]
 			}

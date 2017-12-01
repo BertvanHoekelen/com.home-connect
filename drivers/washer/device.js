@@ -2,7 +2,7 @@
 
 const HomeConnectDevice = require('../../lib/HomeConnectDevice');
 
-class HomeConnectDeviceDishwasher extends HomeConnectDevice {
+class HomeConnectDeviceWasher extends HomeConnectDevice {
 
 	onInit() {
 		super.onInit();
@@ -34,4 +34,4 @@ class HomeConnectDeviceDishwasher extends HomeConnectDevice {
 
 }
 
-module.exports = HomeConnectDeviceDishwasher;
+module.exports = HomeConnectDeviceWasher;

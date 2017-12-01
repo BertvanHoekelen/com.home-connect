@@ -9,9 +9,9 @@ Pre-heat your oven when you leave work, send a picture of your fridge to your sm
 * Oven
 * Washer
 * Dryer
+* Dishwasher
 
 ##### Planned to support:
 
 * Coffee Machine
-* Dishwasher
 * Fridge Freezer
