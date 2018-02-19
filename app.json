@@ -29,7 +29,7 @@
 				"large": "/drivers/oven/assets/images/large.png",
 				"small": "/drivers/oven/assets/images/small.png"
 			},
-			"class": "oven",
+			"class": "other",
 			"capabilities": [ "measure_temperature", "alarm_contact", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -81,7 +81,7 @@
 				"large": "/drivers/washer/assets/images/large.png",
 				"small": "/drivers/washer/assets/images/small.png"
 			},
-			"class": "washer",
+			"class": "other",
 			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -139,7 +139,7 @@
 				"large": "/drivers/dryer/assets/images/large.png",
 				"small": "/drivers/dryer/assets/images/small.png"
 			},
-			"class": "dryer",
+			"class": "other",
 			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -197,7 +197,7 @@
 				"large": "/drivers/dishwasher/assets/images/large.png",
 				"small": "/drivers/dishwasher/assets/images/small.png"
 			},
-			"class": "dishwasher",
+			"class": "other",
 			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"alarm_contact": {
@@ -255,7 +255,7 @@
 				"large": "/drivers/coffee/assets/images/large.png",
 				"small": "/drivers/coffee/assets/images/small.png"
 			},
-			"class": "coffee",
+			"class": "coffeemachine",
 			"capabilities": [ "alarm_contact", "bshc_string.progress" ],
 			"capabilitiesOptions": {
 				"bshc_string.remaining_time": {
@@ -299,6 +299,50 @@
 		}
 	],
 	"flow": {
+		"triggers": [
+			{
+				"id": "program_finished",
+				"title": {
+					"en": "A program has finished",
+					"nl": "Een programma is klaar"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven|dishwasher|washer|dryer"
+					}
+				]
+			},
+			{
+				"id": "door_opened",
+				"title": {
+					"en": "The door has been opened",
+					"nl": "De deur is opengemaakt"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
+					}
+				]
+			},
+			{
+				"id": "door_closed",
+				"title": {
+					"en": "The door has been closed",
+					"nl": "De deur is dichtgedaan"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
+					}
+				]
+			}
+		],
 		"actions": [
 			{
 				"id": "program_oven",

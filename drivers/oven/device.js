@@ -8,18 +8,14 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 		super.onInit();
 	}
 
-	async _parseStatus( key, value ) {
-		//this.log('_parseStatus', key, value)
+	async _parseStatus({ key, value }) {
+		await super._parseStatus(...arguments);
 
 		if( key === 'Cooking.Oven.Status.CurrentCavityTemperature' )
 			return this.setCapabilityValue('measure_temperature', value);
 
 		if( key === 'BSH.Common.Status.DoorState' )
 			return this.setCapabilityValue('alarm_contact', value === 'BSH.Common.EnumType.DoorState.Open' );
-	}
-
-	async _parseSetting( key, value ) {
-		//this.log('_parseSetting', key, value)
 	}
 	
 	startProgram( programId, { temperature, duration }) {

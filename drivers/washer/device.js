@@ -8,8 +8,8 @@ class HomeConnectDeviceWasher extends HomeConnectDevice {
 		super.onInit();
 	}
 
-	async _parseStatus( key, value ) {
-		//this.log('_parseStatus', key, value)
+	async _parseStatus({ key, value }) {
+		await super._parseStatus(...arguments);
 
 		if( key === 'BSH.Common.Status.DoorState' )
 			return this.setCapabilityValue('alarm_contact', value === 'BSH.Common.EnumType.DoorState.Open' );
