@@ -13,8 +13,8 @@ const programMap = {
 
 class HomeConnectDriverDishwasher extends HomeConnectDriver {
 	
-	onInit() {
-		super.onInit();
+	onOAuth2Init() {
+		super.onOAuth2Init();
 		
 		new Homey.FlowCardAction('program_dishwasher')
 			.register()

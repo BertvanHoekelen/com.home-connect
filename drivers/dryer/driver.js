@@ -17,8 +17,8 @@ const targetMap = {
 
 class HomeConnectDriverDryer extends HomeConnectDriver {
 	
-	onInit() {
-		super.onInit();
+	onOAuth2Init() {
+		super.onOAuth2Init();
 		
 		new Homey.FlowCardAction('program_dryer')
 			.register()

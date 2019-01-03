@@ -3,9 +3,12 @@
 const HomeConnectDevice = require('../../lib/HomeConnectDevice');
 
 class HomeConnectDeviceOven extends HomeConnectDevice {
-
-	onInit() {
-		super.onInit();
+	
+	async onCapabilityOnoff( value ) {
+  	return this._setSetting('BSH.Common.Setting.PowerState', value
+  	 ? 'BSH.Common.EnumType.PowerState.On'
+  	 : 'BSH.Common.EnumType.PowerState.Standby'
+    );
 	}
 
 	async _parseStatus({ key, value }) {
@@ -18,7 +21,7 @@ class HomeConnectDeviceOven extends HomeConnectDevice {
 			return this.setCapabilityValue('alarm_contact', value === 'BSH.Common.EnumType.DoorState.Open' );
 	}
 	
-	startProgram( programId, { temperature, duration }) {
+	async startProgram( programId, { temperature, duration }) {
 		return this._setProgram(programId, [
 			{
 				'key': 'Cooking.Oven.Option.SetpointTemperature',

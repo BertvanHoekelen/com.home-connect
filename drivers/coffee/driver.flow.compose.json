@@ -1,4 +1,20 @@
 {
+  "triggers": [
+    {
+      "id": "water_tank_empty",
+      "title": {
+        "en": "Water tank is empty",
+        "nl": "Waterreservoir is leeg"
+      }
+    },
+    {
+      "id": "bean_container_empty",
+      "title": {
+        "en": "Bean container is empty",
+        "nl": "Bonencontainer is leeg"
+      }
+    }
+  ],
   "actions": [
 		{
 			"id": "program_coffee",

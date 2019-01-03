@@ -44,7 +44,7 @@
 				},
 				{
 					"name": "temperature",
-					"type": "range",
+					"type": "number",
 					"min": 30,
 					"max": 250,
 					"step": 1,

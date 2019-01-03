@@ -36,8 +36,8 @@ const spinMap = {
 
 class HomeConnectDriverWasher extends HomeConnectDriver {
 	
-	onInit() {
-		super.onInit();
+	onOAuth2Init() {
+		super.onOAuth2Init();
 		
 		new Homey.FlowCardAction('program_washer')
 			.register()

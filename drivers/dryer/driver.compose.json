@@ -21,6 +21,12 @@
 				"en": "Remaining time",
 				"nl": "Resterende tijd"
 			}
+		},
+		"bshc_string.progress": {
+  		"title": {
+    		"en": "Program progress",
+    		"nl": "Programmavoortgang"
+  		}
 		}
 	},
 	"mobile": {
@@ -44,9 +50,6 @@
 			"template": "list_devices",
 			"navigation": {
 				"next": "add_devices"
-			},
-			"options": {
-				"singular": true
 			}
 		},
 		{

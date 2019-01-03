@@ -4,5 +4,6 @@
 	"setable": true,
 	"title": {
 		"en": "Generic String"
-	}
+	},
+	"icon": "/assets/progress.svg"
 }

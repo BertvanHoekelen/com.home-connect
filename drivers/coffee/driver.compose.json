@@ -8,7 +8,7 @@
 		"small": "{{driverAssetsPath}}/images/small.png"
 	},
 	"class": "coffeemachine",
-	"capabilities": [ "alarm_contact", "bshc_string.progress" ],
+	"capabilities": [ "onoff", "alarm_contact", "bshc_string.progress" ],
 	"capabilitiesOptions": {
 		"bshc_string.remaining_time": {
 			"title": {
@@ -38,9 +38,6 @@
 			"template": "list_devices",
 			"navigation": {
 				"next": "add_devices"
-			},
-			"options": {
-				"singular": true
 			}
 		},
 		{

@@ -11,7 +11,7 @@ class HomeConnectDeviceDishwasher extends HomeConnectDevice {
 			return this.setCapabilityValue('alarm_contact', value === 'BSH.Common.EnumType.DoorState.Open' );
 	}
 	
-	startProgram( programId, {}) {
+	async startProgram( programId, {}) {
 		return this._setProgram(programId, [])		
 	}
 

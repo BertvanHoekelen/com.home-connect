@@ -23,8 +23,8 @@ const beanAmountMap = {
 
 class HomeConnectDriverCoffee extends HomeConnectDriver {
 	
-	onInit() {
-		super.onInit();
+	onOAuth2Init() {
+		super.onOAuth2Init();
 		
 		new Homey.FlowCardAction('program_coffee')
 			.register()
@@ -34,7 +34,21 @@ class HomeConnectDriverCoffee extends HomeConnectDriver {
 					fillQuantity: args.fill_quantity
 				})
 			})
-		}
+			
+		this._flowCardTriggerWaterTankEmpty = new Homey.FlowCardTriggerDevice('water_tank_empty')
+			.register()
+			
+		this._flowCardTriggerBeanContainerEmpty = new Homey.FlowCardTriggerDevice('bean_container_empty')
+			.register()
+  }
+	
+	async triggerFlowWaterTankEmpty( device ) {
+		return this._flowCardTriggerWaterTankEmpty.trigger( device );
+	}
+	
+	async triggerFlowBeanContainerEmpty( device ) {
+		return this._flowCardTriggerBeanContainerEmpty.trigger( device );
+	}
 	
 	_onPairFilter( homeAppliance ) {
 		return homeAppliance.type === 'CoffeeMaker';

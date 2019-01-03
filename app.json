@@ -61,6 +61,34 @@
           }
         ],
         "id": "program_finished"
+      },
+      {
+        "id": "water_tank_empty",
+        "title": {
+          "en": "Water tank is empty",
+          "nl": "Waterreservoir is leeg"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=coffee"
+          }
+        ]
+      },
+      {
+        "id": "bean_container_empty",
+        "title": {
+          "en": "Bean container is empty",
+          "nl": "Bonencontainer is leeg"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=coffee"
+          }
+        ]
       }
     ],
     "actions": [
@@ -359,7 +387,7 @@
           },
           {
             "name": "temperature",
-            "type": "range",
+            "type": "number",
             "min": 30,
             "max": 250,
             "step": 1,
@@ -523,6 +551,7 @@
       },
       "class": "coffeemachine",
       "capabilities": [
+        "onoff",
         "alarm_contact",
         "bshc_string.progress"
       ],
@@ -557,9 +586,6 @@
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
-          },
-          "options": {
-            "singular": true
           }
         },
         {
@@ -596,6 +622,12 @@
             "en": "Remaining time",
             "nl": "Resterende tijd"
           }
+        },
+        "bshc_string.progress": {
+          "title": {
+            "en": "Program progress",
+            "nl": "Programmavoortgang"
+          }
         }
       },
       "mobile": {
@@ -621,9 +653,6 @@
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
-          },
-          "options": {
-            "singular": true
           }
         },
         {
@@ -660,6 +689,12 @@
             "en": "Remaining time",
             "nl": "Resterende tijd"
           }
+        },
+        "bshc_string.progress": {
+          "title": {
+            "en": "Program progress",
+            "nl": "Programmavoortgang"
+          }
         }
       },
       "mobile": {
@@ -685,9 +720,6 @@
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
-          },
-          "options": {
-            "singular": true
           }
         },
         {
@@ -708,15 +740,29 @@
       },
       "class": "other",
       "capabilities": [
+        "onoff",
         "measure_temperature",
         "alarm_contact",
-        "bshc_string.progress"
+        "bshc_string.progress",
+        "bshc_string.remaining_time"
       ],
       "capabilitiesOptions": {
         "alarm_contact": {
           "title": {
             "en": "Door open",
             "nl": "Deur geopend"
+          }
+        },
+        "bshc_string.remaining_time": {
+          "title": {
+            "en": "Remaining time",
+            "nl": "Resterende tijd"
+          }
+        },
+        "bshc_string.progress": {
+          "title": {
+            "en": "Program progress",
+            "nl": "Programmavoortgang"
           }
         }
       },
@@ -744,9 +790,6 @@
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
-          },
-          "options": {
-            "singular": true
           }
         },
         {
@@ -783,6 +826,12 @@
             "en": "Remaining time",
             "nl": "Resterende tijd"
           }
+        },
+        "bshc_string.progress": {
+          "title": {
+            "en": "Program progress",
+            "nl": "Programmavoortgang"
+          }
         }
       },
       "mobile": {
@@ -808,9 +857,6 @@
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
-          },
-          "options": {
-            "singular": true
           }
         },
         {
@@ -828,7 +874,8 @@
       "setable": true,
       "title": {
         "en": "Generic String"
-      }
+      },
+      "icon": "/assets/progress.svg"
     }
   }
 }
