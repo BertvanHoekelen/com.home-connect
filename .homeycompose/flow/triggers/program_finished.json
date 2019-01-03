@@ -1,0 +1,13 @@
+{
+	"title": {
+		"en": "A program has finished",
+		"nl": "Een programma is klaar"
+	},
+	"args": [
+		{
+			"name": "device",
+			"type": "device",
+			"filter": "driver_id=oven|dishwasher|washer|dryer"
+		}
+	]
+}

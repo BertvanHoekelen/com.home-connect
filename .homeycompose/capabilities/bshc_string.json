@@ -1,0 +1,8 @@
+{
+	"type": "string",
+	"getable": true,
+	"setable": true,
+	"title": {
+		"en": "Generic String"
+	}
+}

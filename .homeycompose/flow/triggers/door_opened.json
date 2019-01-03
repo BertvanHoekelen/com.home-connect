@@ -1,0 +1,13 @@
+{
+	"title": {
+		"en": "The door has been opened",
+		"nl": "De deur is opengemaakt"
+	},
+	"args": [
+		{
+			"name": "device",
+			"type": "device",
+			"filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
+		}
+	]
+}

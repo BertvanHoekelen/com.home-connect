@@ -1,0 +1,51 @@
+{
+	"name": {
+		"en": "Oven",
+		"nl": "Oven"
+	},
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	},
+	"class": "other",
+	"capabilities": [ "measure_temperature", "alarm_contact", "bshc_string.progress" ],
+	"capabilitiesOptions": {
+		"alarm_contact": {
+			"title": {
+				"en": "Door open",
+				"nl": "Deur geopend"
+			}
+		}
+	},
+	"mobile": {
+		"components": [
+			{
+				"id": "icon"
+			},
+			{
+				"id": "sensor",
+				"capabilities": [ "measure_temperature", "alarm_contact" ]
+			}
+		]
+	},
+	"pair": [
+		{
+			"id": "login_oauth2",
+			"template": "login_oauth2"
+		},
+		{
+			"id": "list_devices",
+			"template": "list_devices",
+			"navigation": {
+				"next": "add_devices"
+			},
+			"options": {
+				"singular": true
+			}
+		},
+		{
+			"id": "add_devices",
+			"template": "add_devices"
+		}
+	]
+}

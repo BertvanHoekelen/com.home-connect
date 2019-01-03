@@ -1,0 +1,49 @@
+{
+  "actions": [
+		{
+			"id": "program_dishwasher",
+			"title": {
+				"en": "Start Program",
+				"nl": "Start een programma"
+			},
+			"args": [
+				{
+					"name": "program",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "auto1",
+							"label": {
+								"en": "Auto 35-45 °C"
+							}
+						},
+						{
+							"id": "auto2",
+							"label": {
+								"en": "Auto 45-65 °C"
+							}
+						},
+						{
+							"id": "auto3",
+							"label": {
+								"en": "Auto 65-75 °C"
+							}
+						},
+						{
+							"id": "eco50",
+							"label": {
+								"en": "Eco 50 °C"
+							}
+						},
+						{
+							"id": "quick45",
+							"label": {
+								"en": "Quick Wash 45 °C"
+							}
+						}
+					]
+				}
+			]
+		}
+  ]
+}

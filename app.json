@@ -1,814 +1,834 @@
 {
-	"id": "com.home-connect",
-	"sdk": 2,
-	"name": {
-		"en": "Bosch-Siemens Home Connect"
-	},
-	"description": {
-		"en": "Adds support for Bosch-Siemens Home Connect"
-	},
-	"images": {
-		"large": "/assets/images/large.png",
-		"small": "/assets/images/small.png"
-	},
-	"category": "appliances",
-	"version": "1.5.0",
-	"compatibility": ">=1.5.0",
-	"author": {
-		"name": "Athom B.V.",
-		"email": "info@athom.com"
-	},
-	"drivers": [
-		{
-			"id": "oven",
-			"name": {
-				"en": "Oven",
-				"nl": "Oven"
-			},
-			"images": {
-				"large": "/drivers/oven/assets/images/large.png",
-				"small": "/drivers/oven/assets/images/small.png"
-			},
-			"class": "other",
-			"capabilities": [ "measure_temperature", "alarm_contact", "bshc_string.progress" ],
-			"capabilitiesOptions": {
-				"alarm_contact": {
-					"title": {
-						"en": "Door open",
-						"nl": "Deur geopend"
-					}
-				}
-			},
-			"mobile": {
-				"components": [
-					{
-						"id": "icon"
-					},
-					{
-						"id": "sensor",
-						"capabilities": [ "measure_temperature", "alarm_contact" ]
-					}
-				]
-			},
-			"pair": [
-				{
-					"id": "login_oauth2",
-					"template": "login_oauth2"
-				},
-				{
-					"id": "list_devices",
-					"template": "list_devices",
-					"navigation": {
-						"next": "add_devices"
-					},
-					"options": {
-						"singular": true
-					}
-				},
-				{
-					"id": "add_devices",
-					"template": "add_devices"
-				}
-			]
-		},
-		{
-			"id": "washer",
-			"name": {
-				"en": "Washer",
-				"nl": "Wasmachine"
-			},
-			"images": {
-				"large": "/drivers/washer/assets/images/large.png",
-				"small": "/drivers/washer/assets/images/small.png"
-			},
-			"class": "other",
-			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
-			"capabilitiesOptions": {
-				"alarm_contact": {
-					"title": {
-						"en": "Door open",
-						"nl": "Deur geopend"
-					}
-				},
-				"bshc_string.remaining_time": {
-					"title": {
-						"en": "Remaining time",
-						"nl": "Resterende tijd"
-					}
-				}
-			},
-			"mobile": {
-				"components": [
-					{
-						"id": "icon"
-					},
-					{
-						"id": "sensor",
-						"capabilities": [ "alarm_contact" ]
-					}
-				]
-			},
-			"pair": [
-				{
-					"id": "login_oauth2",
-					"template": "login_oauth2"
-				},
-				{
-					"id": "list_devices",
-					"template": "list_devices",
-					"navigation": {
-						"next": "add_devices"
-					},
-					"options": {
-						"singular": true
-					}
-				},
-				{
-					"id": "add_devices",
-					"template": "add_devices"
-				}
-			]
-		},
-		{
-			"id": "dryer",
-			"name": {
-				"en": "Dryer",
-				"nl": "Droger"
-			},
-			"images": {
-				"large": "/drivers/dryer/assets/images/large.png",
-				"small": "/drivers/dryer/assets/images/small.png"
-			},
-			"class": "other",
-			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
-			"capabilitiesOptions": {
-				"alarm_contact": {
-					"title": {
-						"en": "Door open",
-						"nl": "Deur geopend"
-					}
-				},
-				"bshc_string.remaining_time": {
-					"title": {
-						"en": "Remaining time",
-						"nl": "Resterende tijd"
-					}
-				}
-			},
-			"mobile": {
-				"components": [
-					{
-						"id": "icon"
-					},
-					{
-						"id": "sensor",
-						"capabilities": [ "alarm_contact" ]
-					}
-				]
-			},
-			"pair": [
-				{
-					"id": "login_oauth2",
-					"template": "login_oauth2"
-				},
-				{
-					"id": "list_devices",
-					"template": "list_devices",
-					"navigation": {
-						"next": "add_devices"
-					},
-					"options": {
-						"singular": true
-					}
-				},
-				{
-					"id": "add_devices",
-					"template": "add_devices"
-				}
-			]
-		},
-		{
-			"id": "dishwasher",
-			"name": {
-				"en": "Dishwasher",
-				"nl": "Vaatwasser"
-			},
-			"images": {
-				"large": "/drivers/dishwasher/assets/images/large.png",
-				"small": "/drivers/dishwasher/assets/images/small.png"
-			},
-			"class": "other",
-			"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
-			"capabilitiesOptions": {
-				"alarm_contact": {
-					"title": {
-						"en": "Door open",
-						"nl": "Deur geopend"
-					}
-				},
-				"bshc_string.remaining_time": {
-					"title": {
-						"en": "Remaining time",
-						"nl": "Resterende tijd"
-					}
-				}
-			},
-			"mobile": {
-				"components": [
-					{
-						"id": "icon"
-					},
-					{
-						"id": "sensor",
-						"capabilities": [ "alarm_contact" ]
-					}
-				]
-			},
-			"pair": [
-				{
-					"id": "login_oauth2",
-					"template": "login_oauth2"
-				},
-				{
-					"id": "list_devices",
-					"template": "list_devices",
-					"navigation": {
-						"next": "add_devices"
-					},
-					"options": {
-						"singular": true
-					}
-				},
-				{
-					"id": "add_devices",
-					"template": "add_devices"
-				}
-			]
-		},
-		{
-			"id": "coffee",
-			"name": {
-				"en": "Coffee Machine",
-				"nl": "Koffiezetapparaat"
-			},
-			"images": {
-				"large": "/drivers/coffee/assets/images/large.png",
-				"small": "/drivers/coffee/assets/images/small.png"
-			},
-			"class": "coffeemachine",
-			"capabilities": [ "alarm_contact", "bshc_string.progress" ],
-			"capabilitiesOptions": {
-				"bshc_string.remaining_time": {
-					"title": {
-						"en": "Remaining time",
-						"nl": "Resterende tijd"
-					}
-				}
-			},
-			"mobile": {
-				"components": [
-					{
-						"id": "icon"
-					},
-					{
-						"id": "sensor",
-						"capabilities": [ "alarm_contact" ]
-					}
-				]
-			},
-			"pair": [
-				{
-					"id": "login_oauth2",
-					"template": "login_oauth2"
-				},
-				{
-					"id": "list_devices",
-					"template": "list_devices",
-					"navigation": {
-						"next": "add_devices"
-					},
-					"options": {
-						"singular": true
-					}
-				},
-				{
-					"id": "add_devices",
-					"template": "add_devices"
-				}
-			]
-		}
-	],
-	"flow": {
-		"triggers": [
-			{
-				"id": "program_finished",
-				"title": {
-					"en": "A program has finished",
-					"nl": "Een programma is klaar"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven|dishwasher|washer|dryer"
-					}
-				]
-			},
-			{
-				"id": "door_opened",
-				"title": {
-					"en": "The door has been opened",
-					"nl": "De deur is opengemaakt"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
-					}
-				]
-			},
-			{
-				"id": "door_closed",
-				"title": {
-					"en": "The door has been closed",
-					"nl": "De deur is dichtgedaan"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
-					}
-				]
-			}
-		],
-		"actions": [
-			{
-				"id": "program_oven",
-				"title": {
-					"en": "Start Program",
-					"nl": "Start een programma"
-				},
-				"duration": true,
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven"
-					},
-					{
-						"name": "program",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "preheat",
-								"label": {
-									"en": "Pre-heat",
-									"nl": "Voorverwarmen"
-								}
-							},
-							{
-								"id": "pizza",
-								"label": {
-									"en": "Pizza",
-									"nl": "Pizza"
-								}
-							},
-							{
-								"id": "hotair",
-								"label": {
-									"en": "Hot Air",
-									"nl": "Hetelucht"
-								}
-							},
-							{
-								"id": "topbottom",
-								"label": {
-									"en": "Top/Bottom",
-									"nl": "Boven/Onderkant"
-								}
-							}
-						]
-					},
-					{
-						"name": "temperature",
-						"type": "range",
-						"min": 30,
-						"max": 250,
-						"step": 1,
-						"labelDecimals": 0,
-						"label": "°C"
-					}
-				]
-			},
-			
-			
-			{
-				"id": "program_washer",
-				"title": {
-					"en": "Start Program",
-					"nl": "Start een programma"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=washer"
-					},
-					{
-						"name": "program",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "cotton",
-								"label": {
-									"en": "Cotton",
-									"nl": "Katoen"
-								}
-							},
-							{
-								"id": "easycare",
-								"label": {
-									"en": "Easy Care",
-									"nl": "Easy Care"
-								}
-							},
-							{
-								"id": "mix",
-								"label": {
-									"en": "Mix",
-									"nl": "Mix"
-								}
-							},
-							{
-								"id": "silk",
-								"label": {
-									"en": "Silk",
-									"nl": "Zijde"
-								}
-							},
-							{
-								"id": "wool",
-								"label": {
-									"en": "Wool",
-									"nl": "Wol"
-								}
-							}
-						]
-					},
-					{
-						"name": "temperature",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "cold",
-								"label": {
-									"en": "Cold",
-									"nl": "Koud"
-								}
-							},
-							{
-								"id": "20c",
-								"label": "20 °C"
-							},
-							{
-								"id": "30c",
-								"label": "30 °C"
-							},
-							{
-								"id": "40c",
-								"label": "40 °C"
-							},
-							{
-								"id": "50c",
-								"label": "50 °C"
-							},
-							{
-								"id": "60c",
-								"label": "60 °C"
-							},
-							{
-								"id": "70c",
-								"label": "70 °C"
-							},
-							{
-								"id": "80c",
-								"label": "80 °C"
-							},
-							{
-								"id": "90c",
-								"label": "90 °C"
-							}
-						]
-					},
-					{
-						"name": "spin",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "off",
-								"label": {
-									"en": "No spinning",
-									"nl": "Niet rondraaien"
-								}
-							},
-							{
-								"id": "400rpm",
-								"label": "400 rpm"
-							},
-							{
-								"id": "600rpm",
-								"label": "600 rpm"
-							},
-							{
-								"id": "800rpm",
-								"label": "800 rpm"
-							},
-							{
-								"id": "1000rpm",
-								"label": "1000 rpm"
-							},
-							{
-								"id": "1200rpm",
-								"label": "1200 rpm"
-							},
-							{
-								"id": "1400rpm",
-								"label": "1400 rpm"
-							},
-							{
-								"id": "1600rpm",
-								"label": "1600 rpm"
-							}
-						]
-					}
-				]
-			},
-			
-			
-			{
-				"id": "program_dryer",
-				"title": {
-					"en": "Start Program",
-					"nl": "Start een programma"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=dryer"
-					},
-					{
-						"name": "program",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "cotton",
-								"label": {
-									"en": "Cotton",
-									"nl": "Katoen"
-								}
-							},
-							{
-								"id": "synthetic",
-								"label": {
-									"en": "Synthetic",
-									"nl": "Synthetisch"
-								}
-							},
-							{
-								"id": "mix",
-								"label": {
-									"en": "Mix",
-									"nl": "Mix"
-								}
-							}
-						]
-					},
-					{
-						"name": "target",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "irondry",
-								"label": {
-									"en": "Iron dry",
-									"nl": "Strijkdroog"
-								}
-							},
-							{
-								"id": "cupboarddry",
-								"label": {
-									"en": "Cupboard dry",
-									"nl": "Kastdroog dry"
-								}
-							},
-							{
-								"id": "cupboarddryplus",
-								"label": {
-									"en": "Cupboard dry plus",
-									"nl": "Kastdroog plus"
-								}
-							}
-						]
-					}
-				]
-			},
-			
-			
-			{
-				"id": "program_dishwasher",
-				"title": {
-					"en": "Start Program",
-					"nl": "Start een programma"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=dishwasher"
-					},
-					{
-						"name": "program",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "auto1",
-								"label": {
-									"en": "Auto 35-45 °C"
-								}
-							},
-							{
-								"id": "auto2",
-								"label": {
-									"en": "Auto 45-65 °C"
-								}
-							},
-							{
-								"id": "auto3",
-								"label": {
-									"en": "Auto 65-75 °C"
-								}
-							},
-							{
-								"id": "eco50",
-								"label": {
-									"en": "Eco 50 °C"
-								}
-							},
-							{
-								"id": "quick45",
-								"label": {
-									"en": "Quick Wash 45 °C"
-								}
-							}
-						]
-					}
-				]
-			},
-			
-			
-			{
-				"id": "program_coffee",
-				"title": {
-					"en": "Start Program",
-					"nl": "Start een programma"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=coffee"
-					},
-					{
-						"name": "program",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "espresso",
-								"label": {
-									"en": "Espresso"
-								}
-							},
-							{
-								"id": "espressomacchiato",
-								"label": {
-									"en": "Espresso Macchiato"
-								}
-							},
-							{
-								"id": "coffee",
-								"label": {
-									"en": "Coffee",
-									"nl": "Koffie"
-								}
-							},
-							{
-								"id": "cappuccino",
-								"label": {
-									"en": "Cappuccino"
-								}
-							},
-							{
-								"id": "lattemacchiato",
-								"label": {
-									"en": "Latte Macchiato"
-								}
-							},
-							{
-								"id": "cafelatte",
-								"label": {
-									"en": "Caffe Latte"
-								}
-							}
-						]
-					},
-					{
-						"name": "bean_amount",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "mild",
-								"label": {
-									"en": "Mild",
-									"nl": "Mild"
-								}
-							},
-							{
-								"id": "normal",
-								"label": {
-									"en": "Normal",
-									"nl": "Normaal"
-								}
-							},
-							{
-								"id": "strong",
-								"label": {
-									"en": "Strong",
-									"nl": "Sterk"
-								}
-							},
-							{
-								"id": "verystrong",
-								"label": {
-									"en": "Very strong",
-									"nl": "Heel sterk"
-								}
-							},
-							{
-								"id": "doubleshot",
-								"label": {
-									"en": "Double shot",
-									"nl": "Dubbel shot"
-								}
-							},
-							{
-								"id": "doubleshotplus",
-								"label": {
-									"en": "Double shot plus",
-									"nl": "Dubbel shot plus"
-								}
-							}
-						]
-					},
-					{
-						"name": "fill_quantity",
-						"type": "range",
-						"min": 35,
-						"max": 480,
-						"step": 5,
-						"labelDecimals": 0,
-						"label": "ml"
-					}
-				]
-			},
-			
-			
-			{
-				"id": "program_stop",
-				"title": {
-					"en": "Stop the active program",
-					"nl": "Stop het actieve programma"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=oven|washer|dryer|dishwasher|coffee"
-					}
-				]
-			}
-		]
-	},
-	"capabilities": {
-		"bshc_string": {
-			"type": "string",
-			"getable": true,
-			"setable": true,
-			"title": {
-				"en": "Generic String"
-			}
-		}
-	}
+  "id": "com.home-connect",
+  "sdk": 2,
+  "name": {
+    "en": "Bosch-Siemens Home Connect"
+  },
+  "description": {
+    "en": "Adds support for Bosch-Siemens Home Connect"
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "category": "appliances",
+  "version": "2.0.0",
+  "compatibility": ">=1.5.0",
+  "author": {
+    "name": "Athom B.V.",
+    "email": "info@athom.com"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "The door has been closed",
+          "nl": "De deur is dichtgedaan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
+          }
+        ],
+        "id": "door_closed"
+      },
+      {
+        "title": {
+          "en": "The door has been opened",
+          "nl": "De deur is opengemaakt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
+          }
+        ],
+        "id": "door_opened"
+      },
+      {
+        "title": {
+          "en": "A program has finished",
+          "nl": "Een programma is klaar"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=oven|dishwasher|washer|dryer"
+          }
+        ],
+        "id": "program_finished"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Stop the active program",
+          "nl": "Stop het actieve programma"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=oven|washer|dryer|dishwasher|coffee"
+          }
+        ],
+        "id": "program_stop"
+      },
+      {
+        "id": "program_coffee",
+        "title": {
+          "en": "Start Program",
+          "nl": "Start een programma"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=coffee"
+          },
+          {
+            "name": "program",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "espresso",
+                "label": {
+                  "en": "Espresso"
+                }
+              },
+              {
+                "id": "espressomacchiato",
+                "label": {
+                  "en": "Espresso Macchiato"
+                }
+              },
+              {
+                "id": "coffee",
+                "label": {
+                  "en": "Coffee",
+                  "nl": "Koffie"
+                }
+              },
+              {
+                "id": "cappuccino",
+                "label": {
+                  "en": "Cappuccino"
+                }
+              },
+              {
+                "id": "lattemacchiato",
+                "label": {
+                  "en": "Latte Macchiato"
+                }
+              },
+              {
+                "id": "cafelatte",
+                "label": {
+                  "en": "Caffe Latte"
+                }
+              }
+            ]
+          },
+          {
+            "name": "bean_amount",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "mild",
+                "label": {
+                  "en": "Mild",
+                  "nl": "Mild"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal",
+                  "nl": "Normaal"
+                }
+              },
+              {
+                "id": "strong",
+                "label": {
+                  "en": "Strong",
+                  "nl": "Sterk"
+                }
+              },
+              {
+                "id": "verystrong",
+                "label": {
+                  "en": "Very strong",
+                  "nl": "Heel sterk"
+                }
+              },
+              {
+                "id": "doubleshot",
+                "label": {
+                  "en": "Double shot",
+                  "nl": "Dubbel shot"
+                }
+              },
+              {
+                "id": "doubleshotplus",
+                "label": {
+                  "en": "Double shot plus",
+                  "nl": "Dubbel shot plus"
+                }
+              }
+            ]
+          },
+          {
+            "name": "fill_quantity",
+            "type": "range",
+            "min": 35,
+            "max": 480,
+            "step": 5,
+            "labelDecimals": 0,
+            "label": "ml"
+          }
+        ]
+      },
+      {
+        "id": "program_dishwasher",
+        "title": {
+          "en": "Start Program",
+          "nl": "Start een programma"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dishwasher"
+          },
+          {
+            "name": "program",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto1",
+                "label": {
+                  "en": "Auto 35-45 °C"
+                }
+              },
+              {
+                "id": "auto2",
+                "label": {
+                  "en": "Auto 45-65 °C"
+                }
+              },
+              {
+                "id": "auto3",
+                "label": {
+                  "en": "Auto 65-75 °C"
+                }
+              },
+              {
+                "id": "eco50",
+                "label": {
+                  "en": "Eco 50 °C"
+                }
+              },
+              {
+                "id": "quick45",
+                "label": {
+                  "en": "Quick Wash 45 °C"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "program_dryer",
+        "title": {
+          "en": "Start Program",
+          "nl": "Start een programma"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dryer"
+          },
+          {
+            "name": "program",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "cotton",
+                "label": {
+                  "en": "Cotton",
+                  "nl": "Katoen"
+                }
+              },
+              {
+                "id": "synthetic",
+                "label": {
+                  "en": "Synthetic",
+                  "nl": "Synthetisch"
+                }
+              },
+              {
+                "id": "mix",
+                "label": {
+                  "en": "Mix",
+                  "nl": "Mix"
+                }
+              }
+            ]
+          },
+          {
+            "name": "target",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "irondry",
+                "label": {
+                  "en": "Iron dry",
+                  "nl": "Strijkdroog"
+                }
+              },
+              {
+                "id": "cupboarddry",
+                "label": {
+                  "en": "Cupboard dry",
+                  "nl": "Kastdroog dry"
+                }
+              },
+              {
+                "id": "cupboarddryplus",
+                "label": {
+                  "en": "Cupboard dry plus",
+                  "nl": "Kastdroog plus"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "program_oven",
+        "title": {
+          "en": "Start Program",
+          "nl": "Start een programma"
+        },
+        "duration": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          },
+          {
+            "name": "program",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "preheat",
+                "label": {
+                  "en": "Pre-heat",
+                  "nl": "Voorverwarmen"
+                }
+              },
+              {
+                "id": "pizza",
+                "label": {
+                  "en": "Pizza",
+                  "nl": "Pizza"
+                }
+              },
+              {
+                "id": "hotair",
+                "label": {
+                  "en": "Hot Air",
+                  "nl": "Hetelucht"
+                }
+              },
+              {
+                "id": "topbottom",
+                "label": {
+                  "en": "Top/Bottom",
+                  "nl": "Boven/Onderkant"
+                }
+              }
+            ]
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 30,
+            "max": 250,
+            "step": 1,
+            "labelDecimals": 0,
+            "label": "°C"
+          }
+        ]
+      },
+      {
+        "id": "program_washer",
+        "title": {
+          "en": "Start Program",
+          "nl": "Start een programma"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer"
+          },
+          {
+            "name": "program",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "cotton",
+                "label": {
+                  "en": "Cotton",
+                  "nl": "Katoen"
+                }
+              },
+              {
+                "id": "easycare",
+                "label": {
+                  "en": "Easy Care",
+                  "nl": "Easy Care"
+                }
+              },
+              {
+                "id": "mix",
+                "label": {
+                  "en": "Mix",
+                  "nl": "Mix"
+                }
+              },
+              {
+                "id": "silk",
+                "label": {
+                  "en": "Silk",
+                  "nl": "Zijde"
+                }
+              },
+              {
+                "id": "wool",
+                "label": {
+                  "en": "Wool",
+                  "nl": "Wol"
+                }
+              }
+            ]
+          },
+          {
+            "name": "temperature",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "cold",
+                "label": {
+                  "en": "Cold",
+                  "nl": "Koud"
+                }
+              },
+              {
+                "id": "20c",
+                "label": "20 °C"
+              },
+              {
+                "id": "30c",
+                "label": "30 °C"
+              },
+              {
+                "id": "40c",
+                "label": "40 °C"
+              },
+              {
+                "id": "50c",
+                "label": "50 °C"
+              },
+              {
+                "id": "60c",
+                "label": "60 °C"
+              },
+              {
+                "id": "70c",
+                "label": "70 °C"
+              },
+              {
+                "id": "80c",
+                "label": "80 °C"
+              },
+              {
+                "id": "90c",
+                "label": "90 °C"
+              }
+            ]
+          },
+          {
+            "name": "spin",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "No spinning",
+                  "nl": "Niet rondraaien"
+                }
+              },
+              {
+                "id": "400rpm",
+                "label": "400 rpm"
+              },
+              {
+                "id": "600rpm",
+                "label": "600 rpm"
+              },
+              {
+                "id": "800rpm",
+                "label": "800 rpm"
+              },
+              {
+                "id": "1000rpm",
+                "label": "1000 rpm"
+              },
+              {
+                "id": "1200rpm",
+                "label": "1200 rpm"
+              },
+              {
+                "id": "1400rpm",
+                "label": "1400 rpm"
+              },
+              {
+                "id": "1600rpm",
+                "label": "1600 rpm"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Coffee Machine",
+        "nl": "Koffiezetapparaat"
+      },
+      "images": {
+        "large": "/drivers/coffee/assets/images/large.png",
+        "small": "/drivers/coffee/assets/images/small.png"
+      },
+      "class": "coffeemachine",
+      "capabilities": [
+        "alarm_contact",
+        "bshc_string.progress"
+      ],
+      "capabilitiesOptions": {
+        "bshc_string.remaining_time": {
+          "title": {
+            "en": "Remaining time",
+            "nl": "Resterende tijd"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_contact"
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "coffee"
+    },
+    {
+      "name": {
+        "en": "Dishwasher",
+        "nl": "Vaatwasser"
+      },
+      "images": {
+        "large": "/drivers/dishwasher/assets/images/large.png",
+        "small": "/drivers/dishwasher/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "alarm_contact",
+        "bshc_string.remaining_time",
+        "bshc_string.progress"
+      ],
+      "capabilitiesOptions": {
+        "alarm_contact": {
+          "title": {
+            "en": "Door open",
+            "nl": "Deur geopend"
+          }
+        },
+        "bshc_string.remaining_time": {
+          "title": {
+            "en": "Remaining time",
+            "nl": "Resterende tijd"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_contact"
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "dishwasher"
+    },
+    {
+      "name": {
+        "en": "Dryer",
+        "nl": "Droger"
+      },
+      "images": {
+        "large": "/drivers/dryer/assets/images/large.png",
+        "small": "/drivers/dryer/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "alarm_contact",
+        "bshc_string.remaining_time",
+        "bshc_string.progress"
+      ],
+      "capabilitiesOptions": {
+        "alarm_contact": {
+          "title": {
+            "en": "Door open",
+            "nl": "Deur geopend"
+          }
+        },
+        "bshc_string.remaining_time": {
+          "title": {
+            "en": "Remaining time",
+            "nl": "Resterende tijd"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_contact"
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "dryer"
+    },
+    {
+      "name": {
+        "en": "Oven",
+        "nl": "Oven"
+      },
+      "images": {
+        "large": "/drivers/oven/assets/images/large.png",
+        "small": "/drivers/oven/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_temperature",
+        "alarm_contact",
+        "bshc_string.progress"
+      ],
+      "capabilitiesOptions": {
+        "alarm_contact": {
+          "title": {
+            "en": "Door open",
+            "nl": "Deur geopend"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_temperature",
+              "alarm_contact"
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "oven"
+    },
+    {
+      "name": {
+        "en": "Washer",
+        "nl": "Wasmachine"
+      },
+      "images": {
+        "large": "/drivers/washer/assets/images/large.png",
+        "small": "/drivers/washer/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "alarm_contact",
+        "bshc_string.remaining_time",
+        "bshc_string.progress"
+      ],
+      "capabilitiesOptions": {
+        "alarm_contact": {
+          "title": {
+            "en": "Door open",
+            "nl": "Deur geopend"
+          }
+        },
+        "bshc_string.remaining_time": {
+          "title": {
+            "en": "Remaining time",
+            "nl": "Resterende tijd"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_contact"
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "washer"
+    }
+  ],
+  "capabilities": {
+    "bshc_string": {
+      "type": "string",
+      "getable": true,
+      "setable": true,
+      "title": {
+        "en": "Generic String"
+      }
+    }
+  }
 }

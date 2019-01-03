@@ -1,0 +1,57 @@
+{
+	"name": {
+		"en": "Dryer",
+		"nl": "Droger"
+	},
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	},
+	"class": "other",
+	"capabilities": [ "alarm_contact", "bshc_string.remaining_time", "bshc_string.progress" ],
+	"capabilitiesOptions": {
+		"alarm_contact": {
+			"title": {
+				"en": "Door open",
+				"nl": "Deur geopend"
+			}
+		},
+		"bshc_string.remaining_time": {
+			"title": {
+				"en": "Remaining time",
+				"nl": "Resterende tijd"
+			}
+		}
+	},
+	"mobile": {
+		"components": [
+			{
+				"id": "icon"
+			},
+			{
+				"id": "sensor",
+				"capabilities": [ "alarm_contact" ]
+			}
+		]
+	},
+	"pair": [
+		{
+			"id": "login_oauth2",
+			"template": "login_oauth2"
+		},
+		{
+			"id": "list_devices",
+			"template": "list_devices",
+			"navigation": {
+				"next": "add_devices"
+			},
+			"options": {
+				"singular": true
+			}
+		},
+		{
+			"id": "add_devices",
+			"template": "add_devices"
+		}
+	]
+}

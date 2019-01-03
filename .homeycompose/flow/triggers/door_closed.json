@@ -1,0 +1,13 @@
+{
+	"title": {
+		"en": "The door has been closed",
+		"nl": "De deur is dichtgedaan"
+	},
+	"args": [
+		{
+			"name": "device",
+			"type": "device",
+			"filter": "driver_id=oven|dishwasher|fridge|washer|dryer"
+		}
+	]
+}

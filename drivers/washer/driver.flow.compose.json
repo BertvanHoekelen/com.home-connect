@@ -1,0 +1,140 @@
+{
+  "actions": [
+		{
+			"id": "program_washer",
+			"title": {
+				"en": "Start Program",
+				"nl": "Start een programma"
+			},
+			"args": [
+				{
+					"name": "program",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "cotton",
+							"label": {
+								"en": "Cotton",
+								"nl": "Katoen"
+							}
+						},
+						{
+							"id": "easycare",
+							"label": {
+								"en": "Easy Care",
+								"nl": "Easy Care"
+							}
+						},
+						{
+							"id": "mix",
+							"label": {
+								"en": "Mix",
+								"nl": "Mix"
+							}
+						},
+						{
+							"id": "silk",
+							"label": {
+								"en": "Silk",
+								"nl": "Zijde"
+							}
+						},
+						{
+							"id": "wool",
+							"label": {
+								"en": "Wool",
+								"nl": "Wol"
+							}
+						}
+					]
+				},
+				{
+					"name": "temperature",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "cold",
+							"label": {
+								"en": "Cold",
+								"nl": "Koud"
+							}
+						},
+						{
+							"id": "20c",
+							"label": "20 °C"
+						},
+						{
+							"id": "30c",
+							"label": "30 °C"
+						},
+						{
+							"id": "40c",
+							"label": "40 °C"
+						},
+						{
+							"id": "50c",
+							"label": "50 °C"
+						},
+						{
+							"id": "60c",
+							"label": "60 °C"
+						},
+						{
+							"id": "70c",
+							"label": "70 °C"
+						},
+						{
+							"id": "80c",
+							"label": "80 °C"
+						},
+						{
+							"id": "90c",
+							"label": "90 °C"
+						}
+					]
+				},
+				{
+					"name": "spin",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "off",
+							"label": {
+								"en": "No spinning",
+								"nl": "Niet rondraaien"
+							}
+						},
+						{
+							"id": "400rpm",
+							"label": "400 rpm"
+						},
+						{
+							"id": "600rpm",
+							"label": "600 rpm"
+						},
+						{
+							"id": "800rpm",
+							"label": "800 rpm"
+						},
+						{
+							"id": "1000rpm",
+							"label": "1000 rpm"
+						},
+						{
+							"id": "1200rpm",
+							"label": "1200 rpm"
+						},
+						{
+							"id": "1400rpm",
+							"label": "1400 rpm"
+						},
+						{
+							"id": "1600rpm",
+							"label": "1600 rpm"
+						}
+					]
+				}
+			]
+		}
+  ]
+}

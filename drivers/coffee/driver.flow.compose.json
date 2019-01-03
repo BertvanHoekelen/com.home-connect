@@ -1,0 +1,113 @@
+{
+  "actions": [
+		{
+			"id": "program_coffee",
+			"title": {
+				"en": "Start Program",
+				"nl": "Start een programma"
+			},
+			"args": [
+				{
+					"name": "program",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "espresso",
+							"label": {
+								"en": "Espresso"
+							}
+						},
+						{
+							"id": "espressomacchiato",
+							"label": {
+								"en": "Espresso Macchiato"
+							}
+						},
+						{
+							"id": "coffee",
+							"label": {
+								"en": "Coffee",
+								"nl": "Koffie"
+							}
+						},
+						{
+							"id": "cappuccino",
+							"label": {
+								"en": "Cappuccino"
+							}
+						},
+						{
+							"id": "lattemacchiato",
+							"label": {
+								"en": "Latte Macchiato"
+							}
+						},
+						{
+							"id": "cafelatte",
+							"label": {
+								"en": "Caffe Latte"
+							}
+						}
+					]
+				},
+				{
+					"name": "bean_amount",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "mild",
+							"label": {
+								"en": "Mild",
+								"nl": "Mild"
+							}
+						},
+						{
+							"id": "normal",
+							"label": {
+								"en": "Normal",
+								"nl": "Normaal"
+							}
+						},
+						{
+							"id": "strong",
+							"label": {
+								"en": "Strong",
+								"nl": "Sterk"
+							}
+						},
+						{
+							"id": "verystrong",
+							"label": {
+								"en": "Very strong",
+								"nl": "Heel sterk"
+							}
+						},
+						{
+							"id": "doubleshot",
+							"label": {
+								"en": "Double shot",
+								"nl": "Dubbel shot"
+							}
+						},
+						{
+							"id": "doubleshotplus",
+							"label": {
+								"en": "Double shot plus",
+								"nl": "Dubbel shot plus"
+							}
+						}
+					]
+				},
+				{
+					"name": "fill_quantity",
+					"type": "range",
+					"min": 35,
+					"max": 480,
+					"step": 5,
+					"labelDecimals": 0,
+					"label": "ml"
+				}
+			]
+		}
+  ]
+}

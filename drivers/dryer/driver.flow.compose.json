@@ -1,0 +1,67 @@
+{
+  "actions": [
+		{
+			"id": "program_dryer",
+			"title": {
+				"en": "Start Program",
+				"nl": "Start een programma"
+			},
+			"args": [
+				{
+					"name": "program",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "cotton",
+							"label": {
+								"en": "Cotton",
+								"nl": "Katoen"
+							}
+						},
+						{
+							"id": "synthetic",
+							"label": {
+								"en": "Synthetic",
+								"nl": "Synthetisch"
+							}
+						},
+						{
+							"id": "mix",
+							"label": {
+								"en": "Mix",
+								"nl": "Mix"
+							}
+						}
+					]
+				},
+				{
+					"name": "target",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "irondry",
+							"label": {
+								"en": "Iron dry",
+								"nl": "Strijkdroog"
+							}
+						},
+						{
+							"id": "cupboarddry",
+							"label": {
+								"en": "Cupboard dry",
+								"nl": "Kastdroog dry"
+							}
+						},
+						{
+							"id": "cupboarddryplus",
+							"label": {
+								"en": "Cupboard dry plus",
+								"nl": "Kastdroog plus"
+							}
+						}
+					]
+				}
+			]
+		}
+  ]
+}
