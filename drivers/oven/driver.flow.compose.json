@@ -45,11 +45,13 @@
 				{
 					"name": "temperature",
 					"type": "number",
+					"placeholder": {
+  					"en": "Temperature (°C)",
+  					"nl": "Temperatuur (°C)"
+					},
 					"min": 30,
-					"max": 250,
-					"step": 1,
-					"labelDecimals": 0,
-					"label": "°C"
+					"max": 275,
+					"step": 1
 				}
 			]
 		}

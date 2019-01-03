@@ -12,7 +12,7 @@ const SCOPES = [
 	'Settings',
 ];
 
-const DEBUG = false;
+const DEBUG = false; // process.env.DEBUG === '1'
 if( DEBUG ) console.log('WARNING: App is communicating with DEVELOPER servers, not PRODUCTION.\nRun app with --install to use PRODUCTION servers.\n');
 
 module.exports = class HomeConnectApp extends OAuth2App {
@@ -21,7 +21,7 @@ module.exports = class HomeConnectApp extends OAuth2App {
 
 		const apiUrlSubdomain = ( DEBUG ) ? 'simulator' : 'api';
 		
-  	this.enableOAuth2Debug();  	
+  	//this.enableOAuth2Debug();  	
   	this.setOAuth2Config({
     	client: HomeConnectOAuth2Client,
     	apiUrl: `https://${apiUrlSubdomain}.home-connect.com/api`,

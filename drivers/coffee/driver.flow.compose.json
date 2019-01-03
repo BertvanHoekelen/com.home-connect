@@ -116,12 +116,14 @@
 				},
 				{
 					"name": "fill_quantity",
-					"type": "range",
+					"type": "number",
+					"placeholder": {
+  					"en": "Fill quantity (ml)",
+  					"nl": "Hoeveelheid (ml)"
+					},
 					"min": 35,
 					"max": 480,
-					"step": 5,
-					"labelDecimals": 0,
-					"label": "ml"
+					"step": 1
 				}
 			]
 		}

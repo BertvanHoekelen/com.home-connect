@@ -211,12 +211,14 @@
           },
           {
             "name": "fill_quantity",
-            "type": "range",
+            "type": "number",
+            "placeholder": {
+              "en": "Fill quantity (ml)",
+              "nl": "Hoeveelheid (ml)"
+            },
             "min": 35,
             "max": 480,
-            "step": 5,
-            "labelDecimals": 0,
-            "label": "ml"
+            "step": 1
           }
         ]
       },
@@ -388,11 +390,13 @@
           {
             "name": "temperature",
             "type": "number",
+            "placeholder": {
+              "en": "Temperature (°C)",
+              "nl": "Temperatuur (°C)"
+            },
             "min": 30,
-            "max": 250,
-            "step": 1,
-            "labelDecimals": 0,
-            "label": "°C"
+            "max": 275,
+            "step": 1
           }
         ]
       },
