@@ -11,7 +11,7 @@ class HomeConnectDeviceCoffee extends HomeConnectDevice {
     );
 	}
 	
-	async _parseEvent({ key, value })
+	async _parseEvent({ key, value }) {
 	  await super._parseEvent(...arguments);
 	  
 	  if( key === 'ConsumerProducts.CoffeeMaker.Event.WaterTankEmpty' )
