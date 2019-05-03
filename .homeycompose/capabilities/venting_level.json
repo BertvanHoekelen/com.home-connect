@@ -1,0 +1,61 @@
+{
+	"type": "enum",
+	"title": {
+		"en": "Venting Level",
+		"nl": "Ventilatie Stand"
+	},
+	"uiComponent": "picker",
+	"getable": true,
+	"setable": true,
+	"values": [
+		{
+			"id": "venting_1",
+			"title": {
+				"en": "Fan stage 1",
+				"nl": "Ventilatie stand 1"
+			}
+		},
+		{
+			"id": "venting_2",
+			"title": {
+				"en": "Fan stage 2",
+				"nl": "Ventilatie stand 2"
+			}
+		},
+		{
+			"id": "venting_3",
+			"title": {
+				"en": "Fan stage 3",
+				"nl": "Ventilatie stand 3"
+			}
+		},
+		{
+			"id": "venting_4",
+			"title": {
+				"en": "Fan stage 4",
+				"nl": "Ventilatie stand 4"
+			}
+		},
+		{
+			"id": "venting_5",
+			"title": {
+				"en": "Fan stage 5",
+				"nl": "Ventilatie stand 5"
+			}
+		},
+		{
+			"id": "intensive_1",
+			"title": {
+				"en": "Intensive stage 1",
+				"nl": "Intensiviteit stand 1"
+			}
+		},
+		{
+			"id": "intensive_2",
+			"title": {
+				"en": "Intensive stage 2",
+				"nl": "Intensiviteit stand 2"
+			}
+		}
+	]
+}

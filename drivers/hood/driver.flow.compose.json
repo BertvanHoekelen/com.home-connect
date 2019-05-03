@@ -1,0 +1,82 @@
+{
+  "actions": [
+		{
+			"id": "program_venting",
+			"title": {
+				"en": "Venting",
+				"nl": "Ventilatie"
+			},
+			"args": [
+				{
+					"name": "venting_level",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "venting_1",
+							"label": {
+								"en": "Fan stage 1",
+								"nl": "Ventilatie stand 1"
+							}
+						},
+						{
+							"id": "venting_2",
+							"label": {
+								"en": "Fan stage 2",
+								"nl": "Ventilatie stand 2"
+							}
+						},
+						{
+							"id": "venting_3",
+							"label": {
+								"en": "Fan stage 3",
+								"nl": "Ventilatie stand 3"
+							}
+						},
+						{
+							"id": "venting_4",
+							"label": {
+								"en": "Fan stage 4",
+								"nl": "Ventilatie stand 4"
+							}
+						},
+						{
+							"id": "venting_5",
+							"label": {
+								"en": "Fan stage 5",
+								"nl": "Ventilatie stand 5"
+							}
+						},
+						{
+							"id": "intensive_1",
+							"label": {
+								"en": "Intensive stage 1",
+								"nl": "Intensiviteit stand 1"
+							}
+						},
+						{
+							"id": "intensive_2",
+							"label": {
+								"en": "Intensive stage 2",
+								"nl": "Intensiviteit stand 2"
+							}
+						}
+					]
+				}
+			]
+		},
+	  {
+		  "id": "program_automatic",
+		  "title": {
+			  "en": "Automatic mode",
+			  "nl": "Automatische mode"
+		  }
+	  },
+	  {
+		  "id": "program_delayed_shut_off",
+		  "title": {
+			  "en": "Fan run-on",
+			  "nl": "Nalooptijd"
+		  }
+	  }
+  ]
+}

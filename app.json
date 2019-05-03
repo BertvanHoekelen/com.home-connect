@@ -341,6 +341,103 @@
         ]
       },
       {
+        "id": "program_venting",
+        "title": {
+          "en": "Venting",
+          "nl": "Ventilatie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "name": "venting_level",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "venting_1",
+                "label": {
+                  "en": "Fan stage 1",
+                  "nl": "Ventilatie stand 1"
+                }
+              },
+              {
+                "id": "venting_2",
+                "label": {
+                  "en": "Fan stage 2",
+                  "nl": "Ventilatie stand 2"
+                }
+              },
+              {
+                "id": "venting_3",
+                "label": {
+                  "en": "Fan stage 3",
+                  "nl": "Ventilatie stand 3"
+                }
+              },
+              {
+                "id": "venting_4",
+                "label": {
+                  "en": "Fan stage 4",
+                  "nl": "Ventilatie stand 4"
+                }
+              },
+              {
+                "id": "venting_5",
+                "label": {
+                  "en": "Fan stage 5",
+                  "nl": "Ventilatie stand 5"
+                }
+              },
+              {
+                "id": "intensive_1",
+                "label": {
+                  "en": "Intensive stage 1",
+                  "nl": "Intensiviteit stand 1"
+                }
+              },
+              {
+                "id": "intensive_2",
+                "label": {
+                  "en": "Intensive stage 2",
+                  "nl": "Intensiviteit stand 2"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "program_automatic",
+        "title": {
+          "en": "Automatic mode",
+          "nl": "Automatische mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "program_delayed_shut_off",
+        "title": {
+          "en": "Fan run-on",
+          "nl": "Nalooptijd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
         "id": "program_oven",
         "title": {
           "en": "Start Program",
@@ -734,6 +831,55 @@
       "id": "dryer"
     },
     {
+      "id": "hood",
+      "name": {
+        "en": "Hood",
+        "nl": "Afzuigkap"
+      },
+      "images": {
+        "large": "/drivers/hood/assets/images/large.png",
+        "small": "/drivers/hood/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "venting_level",
+        "bshc_string.remaining_time",
+        "bshc_string.progress"
+      ],
+      "capabilitiesOptions": {
+        "bshc_string.remaining_time": {
+          "title": {
+            "en": "Remaining time",
+            "nl": "Resterende tijd"
+          }
+        },
+        "bshc_string.progress": {
+          "title": {
+            "en": "Program progress",
+            "nl": "Programmavoortgang"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Oven",
         "nl": "Oven"
@@ -880,6 +1026,67 @@
         "en": "Generic String"
       },
       "icon": "/assets/progress.svg"
+    },
+    "venting_level": {
+      "type": "enum",
+      "title": {
+        "en": "Venting Level",
+        "nl": "Ventilatie Stand"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "venting_1",
+          "title": {
+            "en": "Fan stage 1",
+            "nl": "Ventilatie stand 1"
+          }
+        },
+        {
+          "id": "venting_2",
+          "title": {
+            "en": "Fan stage 2",
+            "nl": "Ventilatie stand 2"
+          }
+        },
+        {
+          "id": "venting_3",
+          "title": {
+            "en": "Fan stage 3",
+            "nl": "Ventilatie stand 3"
+          }
+        },
+        {
+          "id": "venting_4",
+          "title": {
+            "en": "Fan stage 4",
+            "nl": "Ventilatie stand 4"
+          }
+        },
+        {
+          "id": "venting_5",
+          "title": {
+            "en": "Fan stage 5",
+            "nl": "Ventilatie stand 5"
+          }
+        },
+        {
+          "id": "intensive_1",
+          "title": {
+            "en": "Intensive stage 1",
+            "nl": "Intensiviteit stand 1"
+          }
+        },
+        {
+          "id": "intensive_2",
+          "title": {
+            "en": "Intensive stage 2",
+            "nl": "Intensiviteit stand 2"
+          }
+        }
+      ]
     }
   }
 }

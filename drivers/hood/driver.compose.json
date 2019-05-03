@@ -1,0 +1,49 @@
+{
+  "id": "hood",
+  "name": {
+    "en": "Hood",
+    "nl": "Afzuigkap"
+  },
+  "images": {
+    "large": "/drivers/hood/assets/images/large.png",
+    "small": "/drivers/hood/assets/images/small.png"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "venting_level",
+    "bshc_string.remaining_time",
+    "bshc_string.progress"
+  ],
+  "capabilitiesOptions": {
+    "bshc_string.remaining_time": {
+      "title": {
+        "en": "Remaining time",
+        "nl": "Resterende tijd"
+      }
+    },
+    "bshc_string.progress": {
+      "title": {
+        "en": "Program progress",
+        "nl": "Programmavoortgang"
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "login_oauth2",
+      "template": "login_oauth2"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
